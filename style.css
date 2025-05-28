@@ -1,1 +1,144 @@
-/* Add your CSS here */
+/*
+  Intel Sustainability Timeline Project CSS
+  Simple, beginner-friendly styles with comments for learning
+*/
+
+/* 1. Reset some default browser styles */
+body, h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f5f5;
+  color: #222;
+}
+
+/* 2. Hero/Header Section */
+.hero {
+  background: linear-gradient(135deg, #2196f3 0%, #1565c0 100%); /* Intel blue gradient */
+  color: #fff;
+  text-align: center;
+  padding: 48px 16px 40px 16px;
+  position: relative;
+}
+
+.intel-logo {
+  width: 100px;
+  margin-bottom: 16px;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.hero-underline {
+  width: 60px;
+  height: 4px;
+  background: #00bcd4;
+  margin: 0 auto 20px auto;
+  border-radius: 2px;
+}
+
+.hero-desc {
+  font-size: 1.15rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* 3. Timeline Section */
+.timeline {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  gap: 32px;
+  padding: 40px 24px 24px 24px;
+  background: #f3f3f3;
+  scroll-snap-type: x mandatory; /* Bonus: scroll snap */
+}
+
+.timeline-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  min-width: 280px;
+  max-width: 320px;
+  flex: 0 0 300px;
+  padding: 20px 18px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+  scroll-snap-align: start;
+}
+
+.timeline-card h2 {
+  color: #1565c0;
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+}
+
+.timeline-card h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.timeline-card img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  object-fit: cover;
+  height: 110px;
+}
+
+/* Hide details by default, show on hover */
+.card-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+.timeline-card:hover .card-details,
+.timeline-card:focus-within .card-details {
+  max-height: 200px;
+  opacity: 1;
+}
+
+/* Bonus: Card transform and shadow on hover */
+.timeline-card:hover,
+.timeline-card:focus-within {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(21,101,192,0.18);
+  z-index: 2;
+}
+
+/* 4. Timeline instructions */
+.timeline-instructions {
+  text-align: center;
+  color: #444;
+  font-size: 1rem;
+  margin: 24px 0 32px 0;
+}
+
+/* 5. Responsive Design: Stack timeline vertically on small screens */
+@media (max-width: 700px) {
+  .timeline {
+    flex-direction: column;
+    gap: 24px;
+    overflow-x: visible;
+    padding: 24px 8px;
+  }
+  .timeline-card {
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
+  }
+}
