@@ -16,9 +16,12 @@ body {
   color: #222;
 }
 
+
 /* 2. Hero/Header Section */
-.hero {
+header {
   background: linear-gradient(135deg, #2196f3 0%, #1565c0 100%); /* Intel blue gradient */
+}
+.hero, header {
   color: #fff;
   text-align: center;
   padding: 48px 16px 40px 16px;
